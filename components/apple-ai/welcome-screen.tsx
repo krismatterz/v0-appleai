@@ -89,14 +89,7 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                
-                {/* Badge */}
-                {product.isNew && (
-                  <span className="absolute top-1.5 right-1.5 text-[8px] font-semibold uppercase tracking-wider text-accent bg-accent/10 px-1.5 py-0.5 rounded-full">
-                    New
-                  </span>
-                )}
-                
+
                 {/* Product Info */}
                 <h3 className="text-[10px] md:text-xs font-medium text-foreground mb-0.5 line-clamp-1">
                   {product.name}

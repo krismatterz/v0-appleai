@@ -69,11 +69,6 @@ export function ProductModal({ product, isOpen, onClose, onAskAbout }: ProductMo
 
               {/* Product Info */}
               <div className="text-center mb-6">
-                {product.isNew && (
-                  <span className="inline-block px-3 py-1 text-xs font-medium bg-accent text-accent-foreground rounded-full mb-3">
-                    New
-                  </span>
-                )}
                 <h3 className="text-2xl font-semibold text-foreground mb-2">
                   {product.name}
                 </h3>
