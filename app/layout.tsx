@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Apple AI - Your Personal Product Guide',
+  title: 'Apple - Your Personal Product Guide',
   description: 'Experience Apple.com reimagined as a conversational AI interface. Discover products, compare features, and get personalized recommendations through natural conversation.',
   generator: 'v0.app',
   icons: {

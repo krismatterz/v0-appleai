@@ -133,7 +133,7 @@ export function ProductModal({ product, isOpen, onClose, onAskAbout }: ProductMo
               {/* Quick Questions */}
               <div className="border-t border-border pt-6">
                 <p className="text-sm font-medium text-muted-foreground mb-3">
-                  Ask Apple AI about this product
+                  Ask Apple Intelligence about this product
                 </p>
                 <div className="space-y-2">
                   {quickQuestions.map((question, index) => (

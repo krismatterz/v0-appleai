@@ -107,7 +107,7 @@ export function Sidebar({
                 className="w-auto h-auto max-w-5 max-h-6 object-contain dark:invert"
               />
             </div>
-            <span className="font-semibold text-sidebar-foreground tracking-tight">Apple AI</span>
+            <span className="font-semibold text-sidebar-foreground tracking-tight">Apple</span>
           </div>
           <button
             onClick={onToggle}

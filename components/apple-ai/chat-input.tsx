@@ -14,7 +14,7 @@ interface ChatInputProps {
 export function ChatInput({
   onSendMessage,
   isLoading = false,
-  placeholder = "Message Apple AI...",
+  placeholder = "Message Apple Intelligence...",
 }: ChatInputProps) {
   const [message, setMessage] = useState("");
   const [isListening, setIsListening] = useState(false);
@@ -185,7 +185,7 @@ export function ChatInput({
 
         {/* Hint text */}
         <p className="text-center text-xs text-muted-foreground/60 mt-4 leading-relaxed">
-          Apple AI can help you explore products, compare features, and find the perfect device.
+          Apple Intelligence can help you explore products, compare features, and find the perfect device.
         </p>
       </div>
     </div>

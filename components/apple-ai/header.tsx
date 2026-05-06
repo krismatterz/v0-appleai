@@ -71,7 +71,7 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
           {/* Center - Model selector (visible on tablet) */}
           <div className="hidden md:flex lg:hidden items-center">
             <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-secondary/40 transition-colors">
-              <span className="text-sm font-medium text-foreground">Apple AI</span>
+              <span className="text-sm font-medium text-foreground">Apple Intelligence</span>
               <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />
             </button>
           </div>
