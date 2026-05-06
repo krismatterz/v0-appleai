@@ -33,13 +33,13 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="relative w-10 h-10 mx-auto mb-3"
+            className="relative w-20 h-20 mx-auto mb-3"
           >
             <Image
               src={appleLogoUrl}
               alt="Apple"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className="w-auto h-auto max-w-full max-h-full object-contain dark:invert"
             />
           </motion.div>
@@ -50,7 +50,7 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
             transition={{ duration: 0.4, delay: 0.15 }}
             className="text-2xl md:text-3xl font-semibold text-foreground mb-1.5 tracking-tight"
           >
-            Welcome to Apple AI
+            Welcome to Apple
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 5 }}
@@ -58,7 +58,7 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="text-sm md:text-base text-muted-foreground max-w-md mx-auto"
           >
-            Discover our 2026 lineup through conversation
+            Chat to buy an iPhone, MacBook, Watch
           </motion.p>
         </motion.div>
 
