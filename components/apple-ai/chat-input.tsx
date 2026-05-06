@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Mic, MicOff, Paperclip, Sparkles, Camera } from "lucide-react";
+import { Send, Mic, MicOff, Paperclip, Sparkles, Camera, ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ChatInputProps {
@@ -14,7 +14,7 @@ interface ChatInputProps {
 export function ChatInput({
   onSendMessage,
   isLoading = false,
-  placeholder = "Ask Apple AI anything...",
+  placeholder = "Message Apple AI...",
 }: ChatInputProps) {
   const [message, setMessage] = useState("");
   const [isListening, setIsListening] = useState(false);
@@ -26,7 +26,7 @@ export function ChatInput({
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${Math.min(
         textareaRef.current.scrollHeight,
-        200
+        160
       )}px`;
     }
   }, [message]);
@@ -55,132 +55,139 @@ export function ChatInput({
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-4">
-      <motion.form
-        onSubmit={handleSubmit}
-        initial={false}
-        animate={{
-          scale: isFocused ? 1.01 : 1,
-        }}
-        transition={{ duration: 0.2 }}
-        className={cn(
-          "relative flex items-end gap-2 p-2 rounded-2xl",
-          "bg-card border border-border",
-          "transition-all duration-300",
-          isFocused && "border-accent/50 shadow-lg shadow-accent/10"
-        )}
-      >
-        {/* Left actions */}
-        <div className="flex items-center gap-1 pb-1">
-          <button
-            type="button"
-            className="p-2 rounded-xl hover:bg-secondary transition-colors"
-            aria-label="Attach file"
-          >
-            <Paperclip className="w-5 h-5 text-muted-foreground" />
-          </button>
-          <button
-            type="button"
-            className="p-2 rounded-xl hover:bg-secondary transition-colors"
-            aria-label="Take photo"
-          >
-            <Camera className="w-5 h-5 text-muted-foreground" />
-          </button>
-        </div>
+    <div className="w-full flex justify-center px-4">
+      <div className="w-full max-w-3xl">
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={false}
+          className={cn(
+            "relative flex items-end gap-3 p-3 rounded-3xl",
+            "bg-card/80 border border-border/60",
+            "backdrop-blur-xl",
+            "transition-all duration-300",
+            isFocused && "border-accent/40 shadow-xl shadow-accent/5 glow-accent"
+          )}
+        >
+          {/* Left actions */}
+          <div className="flex items-center gap-1.5 pb-0.5">
+            <motion.button
+              type="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-2.5 rounded-xl hover:bg-secondary/80 transition-colors"
+              aria-label="Attach file"
+            >
+              <Paperclip className="w-5 h-5 text-muted-foreground" />
+            </motion.button>
+            <motion.button
+              type="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-2.5 rounded-xl hover:bg-secondary/80 transition-colors hidden sm:flex"
+              aria-label="Take photo"
+            >
+              <Camera className="w-5 h-5 text-muted-foreground" />
+            </motion.button>
+          </div>
 
-        {/* Input area */}
-        <div className="flex-1 relative">
-          <textarea
-            ref={textareaRef}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            placeholder={placeholder}
-            disabled={isLoading}
-            rows={1}
-            className={cn(
-              "w-full resize-none bg-transparent py-3 px-1",
-              "text-foreground placeholder:text-muted-foreground",
-              "focus:outline-none",
-              "disabled:opacity-50 disabled:cursor-not-allowed"
-            )}
-            style={{ maxHeight: "200px" }}
-          />
-        </div>
+          {/* Input area */}
+          <div className="flex-1 relative flex items-center">
+            <textarea
+              ref={textareaRef}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyDown={handleKeyDown}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              placeholder={placeholder}
+              disabled={isLoading}
+              rows={1}
+              className={cn(
+                "w-full resize-none bg-transparent py-2.5 px-1",
+                "text-foreground text-base placeholder:text-muted-foreground/70",
+                "focus:outline-none",
+                "disabled:opacity-50 disabled:cursor-not-allowed"
+              )}
+              style={{ maxHeight: "160px" }}
+            />
+          </div>
 
-        {/* Right actions */}
-        <div className="flex items-center gap-1 pb-1">
-          {/* Voice button */}
-          <motion.button
-            type="button"
-            onClick={toggleListening}
-            whileTap={{ scale: 0.95 }}
-            className={cn(
-              "relative p-2 rounded-xl transition-all",
-              isListening
-                ? "bg-accent text-accent-foreground"
-                : "hover:bg-secondary text-muted-foreground"
-            )}
-            aria-label={isListening ? "Stop listening" : "Start voice input"}
-          >
-            {isListening && (
-              <motion.div
-                className="absolute inset-0 rounded-xl bg-accent voice-pulse"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.5 }}
-              />
-            )}
-            {isListening ? (
-              <MicOff className="w-5 h-5 relative z-10" />
-            ) : (
-              <Mic className="w-5 h-5" />
-            )}
-          </motion.button>
+          {/* Right actions */}
+          <div className="flex items-center gap-1.5 pb-0.5">
+            {/* Voice button */}
+            <motion.button
+              type="button"
+              onClick={toggleListening}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={cn(
+                "relative p-2.5 rounded-xl transition-all",
+                isListening
+                  ? "bg-accent text-accent-foreground"
+                  : "hover:bg-secondary/80 text-muted-foreground"
+              )}
+              aria-label={isListening ? "Stop listening" : "Start voice input"}
+            >
+              {isListening && (
+                <motion.div
+                  className="absolute inset-0 rounded-xl bg-accent voice-pulse"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.5 }}
+                />
+              )}
+              {isListening ? (
+                <MicOff className="w-5 h-5 relative z-10" />
+              ) : (
+                <Mic className="w-5 h-5" />
+              )}
+            </motion.button>
 
-          {/* Send button */}
-          <AnimatePresence mode="wait">
-            {message.trim() ? (
-              <motion.button
-                key="send"
-                type="submit"
-                disabled={isLoading}
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                whileTap={{ scale: 0.95 }}
-                className={cn(
-                  "p-2 rounded-xl transition-all",
-                  "bg-primary text-primary-foreground",
-                  "hover:opacity-90",
-                  "disabled:opacity-50 disabled:cursor-not-allowed"
-                )}
-                aria-label="Send message"
-              >
-                <Send className="w-5 h-5" />
-              </motion.button>
-            ) : (
-              <motion.button
-                key="sparkle"
-                type="button"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                className="p-2 rounded-xl hover:bg-secondary transition-colors"
-                aria-label="AI suggestions"
-              >
-                <Sparkles className="w-5 h-5 text-muted-foreground" />
-              </motion.button>
-            )}
-          </AnimatePresence>
-        </div>
-      </motion.form>
+            {/* Send button */}
+            <AnimatePresence mode="wait">
+              {message.trim() ? (
+                <motion.button
+                  key="send"
+                  type="submit"
+                  disabled={isLoading}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={cn(
+                    "p-2.5 rounded-xl transition-all",
+                    "bg-foreground text-background",
+                    "hover:opacity-90",
+                    "disabled:opacity-50 disabled:cursor-not-allowed"
+                  )}
+                  aria-label="Send message"
+                >
+                  <ArrowUp className="w-5 h-5" />
+                </motion.button>
+              ) : (
+                <motion.button
+                  key="sparkle"
+                  type="button"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2.5 rounded-xl hover:bg-secondary/80 transition-colors"
+                  aria-label="AI suggestions"
+                >
+                  <Sparkles className="w-5 h-5 text-muted-foreground" />
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.form>
 
-      {/* Hint text */}
-      <p className="text-center text-xs text-muted-foreground mt-3">
-        Apple AI can help you explore products, compare features, and find the perfect device for you.
-      </p>
+        {/* Hint text */}
+        <p className="text-center text-xs text-muted-foreground/60 mt-4 leading-relaxed">
+          Apple AI can help you explore products, compare features, and find the perfect device.
+        </p>
+      </div>
     </div>
   );
 }

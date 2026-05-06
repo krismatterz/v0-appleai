@@ -115,8 +115,8 @@ export default function AppleAIChat() {
 
           {/* Input area */}
           <div className={cn(
-            "border-t border-border bg-background/80 backdrop-blur-xl",
-            "py-4"
+            "border-t border-border/40 glass",
+            "py-5"
           )}>
             <ChatInput
               onSendMessage={handleSendMessage}
