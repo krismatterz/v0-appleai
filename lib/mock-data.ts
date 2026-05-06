@@ -58,7 +58,7 @@ export const products: Record<string, Product[]> = {
       category: "Apple Watch",
       tagline: "Adventure awaits.",
       price: "From $899",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uNhiV1uTaYfY4MP3pepZ4ZHiLeOGGE.png",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ultra-c1MqO1gnadh9edErNv2CAnwc4XQ9dF.png",
       isNew: true,
       rating: 4.9,
     },
