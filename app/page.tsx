@@ -84,7 +84,7 @@ export default function AppleAIChat() {
   }, []);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden" style={{ backgroundColor: '#fafafa' }}>
       {/* Sidebar */}
       <Sidebar
         isOpen={sidebarOpen}
