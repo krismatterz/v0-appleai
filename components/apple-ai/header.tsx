@@ -18,9 +18,9 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
       animate={{ opacity: 1, y: 0 }}
       className="sticky top-0 z-30 w-full border-b border-border bg-background/95 backdrop-blur-sm"
     >
-      <div className="flex items-center justify-between h-12 px-4 max-w-7xl mx-auto">
-        {/* Left section */}
-        <div className="flex items-center gap-3">
+      <div className="flex items-center h-12 px-4 max-w-7xl mx-auto">
+        {/* Left section - fixed width to balance with right */}
+        <div className="flex items-center gap-3 w-48">
           <button
             onClick={onMenuClick}
             className={cn(
@@ -52,8 +52,8 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
           </button>
         </div>
 
-        {/* Right section */}
-        <div className="flex items-center gap-1">
+        {/* Right section - fixed width to balance with left */}
+        <div className="flex items-center justify-end gap-1 w-48">
           <button
             className="px-3 py-1.5 text-xs font-medium text-foreground bg-secondary rounded-full hover:bg-secondary/80 transition-colors"
           >
