@@ -5,6 +5,8 @@ import { User, Volume2, Copy, ThumbsUp, ThumbsDown, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ProductCard, Product } from "./product-card";
 import { useState } from "react";
+import { appleLogoUrl } from "@/lib/mock-data";
+import Image from "next/image";
 
 export interface Message {
   id: string;
@@ -54,18 +56,14 @@ export function ChatMessage({
           <User className="w-4 h-4 text-muted-foreground" />
         </div>
       ) : (
-        <div className="relative flex-shrink-0 w-9 h-9">
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-gray-600 to-gray-900" />
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <svg
-              viewBox="0 0 17 20"
-              className="w-4 h-4.5 fill-white"
-              aria-label="Apple"
-            >
-              <path d="M15.5 14.5c-.5 1.2-1.1 2.3-2 3.3-.8.9-1.6 1.4-2.4 1.4-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5-.6 0-1.3.2-2 .5-.8.3-1.4.5-1.9.5-.9 0-1.8-.5-2.7-1.5C-.5 16.3 0 14.3 0 12c0-1.2.3-2.3.8-3.3.7-1.2 1.6-2 2.7-2.3.5-.2 1.2-.3 2-.3.7 0 1.5.2 2.4.6.9.4 1.4.6 1.7.6.2 0 .8-.2 1.8-.7.9-.4 1.7-.6 2.3-.6 1.7.1 3 1 3.9 2.5-1.6.9-2.3 2.2-2.3 3.8 0 1.2.4 2.3 1.3 3.2.4.4.8.7 1.3.9-.2.4-.3.7-.4 1.1zM11.4.3c0 .9-.3 1.8-1 2.6-.8 1-1.8 1.5-2.9 1.5 0-1 .4-1.9 1-2.6.4-.4.8-.8 1.3-1 .5-.3 1-.4 1.5-.5 0 0 .1 0 .1 0z" />
-            </svg>
-          </div>
+        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-secondary/80 flex items-center justify-center">
+          <Image
+            src={appleLogoUrl}
+            alt="Apple"
+            width={18}
+            height={22}
+            className="w-auto h-auto max-w-[18px] max-h-[22px] object-contain dark:invert"
+          />
         </div>
       )}
 

@@ -1,138 +1,111 @@
 import { Product } from "@/components/apple-ai/product-card";
 
+export const appleLogoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-logo-tAZMvbaDtzb0zezgsei1P8QTjR1lDg.png';
+
 export const products: Record<string, Product[]> = {
   iphone: [
     {
-      id: "iphone-16-pro-max",
-      name: "iPhone 16 Pro Max",
+      id: "iphone-17-pro-max",
+      name: "iPhone 17 Pro Max",
       category: "iPhone",
-      tagline: "The ultimate iPhone. Powered by A18 Pro.",
+      tagline: "The ultimate iPhone.",
       price: "From $1,199",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-model-unselect-gallery-1-202409?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1723843553399",
-      colors: ["#1C1C1E", "#F5F5F0", "#C4A77D", "#3B3B3D"],
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-WPX27CVvryKzmFAblmah5OPjJsoUI3.png",
+      colors: ["#E87A4D", "#1C1C1E", "#F5F5F0", "#3B3B3D"],
       isNew: true,
       rating: 4.9,
     },
     {
-      id: "iphone-16-pro",
-      name: "iPhone 16 Pro",
+      id: "iphone-air",
+      name: "iPhone Air",
       category: "iPhone",
-      tagline: "Hello, Apple Intelligence.",
+      tagline: "Light. Years ahead.",
       price: "From $999",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1723593807238",
-      colors: ["#1C1C1E", "#F5F5F0", "#C4A77D", "#3B3B3D"],
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pLHBxTt7tGtKT7L831Zqc01qrzFly7.png",
+      colors: ["#B8D4E8", "#1C1C1E", "#F5F5F0", "#E8D4C8"],
       isNew: true,
       rating: 4.8,
-    },
-    {
-      id: "iphone-16",
-      name: "iPhone 16",
-      category: "iPhone",
-      tagline: "A total powerhouse.",
-      price: "From $799",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1723831032867",
-      colors: ["#E8E3DC", "#FAE7D6", "#BDE0F1", "#B5C7A3", "#1C1C1E"],
-      isNew: true,
-      rating: 4.7,
     },
   ],
   mac: [
     {
-      id: "macbook-pro-16",
-      name: 'MacBook Pro 16"',
+      id: "macbook-neo",
+      name: "MacBook Neo",
+      category: "Mac",
+      tagline: "Hello, everyone.",
+      price: "From $599",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neo-8PcF3d738gWUy2Cv2GMphOyxBzqolj.png",
+      colors: ["#E8E88C", "#F5C6D0", "#4A6B8A", "#86868B"],
+      isNew: true,
+      rating: 4.8,
+    },
+    {
+      id: "macbook-pro-m5",
+      name: "MacBook Pro",
       category: "Mac",
       tagline: "Mind-blowing. Head-turning.",
-      price: "From $2,499",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697230830200",
+      price: "From $1,999",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mbpro-m5.png-yvFvJrq8pNjVrNJyOV0qw2O30hqwuG.jpeg",
       colors: ["#1C1C1E", "#86868B"],
       isNew: true,
       rating: 4.9,
     },
-    {
-      id: "macbook-air-15",
-      name: 'MacBook Air 15"',
-      category: "Mac",
-      tagline: "Impressively big. Impossibly thin.",
-      price: "From $1,299",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1684518479433",
-      colors: ["#2E3642", "#86868B", "#F5F5F0", "#FFD700"],
-      rating: 4.8,
-    },
-    {
-      id: "imac-24",
-      name: 'iMac 24"',
-      category: "Mac",
-      tagline: "Say hello.",
-      price: "From $1,299",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697145298233",
-      colors: ["#6BA4B8", "#F9D1C2", "#7FC881", "#E8E3DC", "#F5C75B", "#A186B5", "#86868B"],
-      rating: 4.7,
-    },
   ],
   watch: [
     {
-      id: "apple-watch-ultra-2",
-      name: "Apple Watch Ultra 2",
+      id: "apple-watch-ultra-3",
+      name: "Apple Watch Ultra 3",
       category: "Apple Watch",
-      tagline: "Next level adventure.",
-      price: "From $799",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-ultra-2-702702?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1693529816158",
+      tagline: "Adventure awaits.",
+      price: "From $899",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uNhiV1uTaYfY4MP3pepZ4ZHiLeOGGE.png",
       isNew: true,
       rating: 4.9,
     },
     {
-      id: "apple-watch-series-10",
-      name: "Apple Watch Series 10",
+      id: "apple-watch-series-11",
+      name: "Apple Watch Series 11",
       category: "Apple Watch",
-      tagline: "Thinstant classic.",
+      tagline: "Smarter. Brighter. Mightier.",
       price: "From $399",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-s10-702702?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1724953541865",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PM3fLaRqaaurXM0WNZPtenYy0SHXWu.png",
       isNew: true,
       rating: 4.8,
-    },
-    {
-      id: "apple-watch-se",
-      name: "Apple Watch SE",
-      category: "Apple Watch",
-      tagline: "A great deal to love.",
-      price: "From $249",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-se-702702?wid=400&hei=400&fmt=jpeg&qlt=90&.v=1693529847614",
-      rating: 4.6,
     },
   ],
   airpods: [
     {
-      id: "airpods-pro-2",
-      name: "AirPods Pro 2",
+      id: "airpods-pro-3",
+      name: "AirPods Pro 3",
       category: "AirPods",
       tagline: "Rebuilt from the sound up.",
-      price: "$249",
+      price: "$279",
       image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MTJV3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1694014871985",
       isNew: true,
       rating: 4.9,
     },
     {
-      id: "airpods-max",
-      name: "AirPods Max",
+      id: "airpods-max-2",
+      name: "AirPods Max 2",
       category: "AirPods",
-      tagline: "High-fidelity audio.",
-      price: "$549",
+      tagline: "Immersive audio reimagined.",
+      price: "$599",
       image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-hero-select-202011?wid=940&hei=1112&fmt=png-alpha&.v=1604021221000",
       colors: ["#A8B8C8", "#2E3642", "#F5F5F0", "#7FC881", "#F9D1C2"],
-      rating: 4.7,
-    },
-    {
-      id: "airpods-4",
-      name: "AirPods 4",
-      category: "AirPods",
-      tagline: "Rebuilt for an iconic fit.",
-      price: "$129",
-      image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-4-hero-select-202409?wid=976&hei=916&fmt=jpeg&qlt=90&.v=1725502959101",
       isNew: true,
-      rating: 4.6,
+      rating: 4.8,
     },
   ],
 };
+
+export const featuredProducts2026: Product[] = [
+  products.iphone[0], // iPhone 17 Pro Max
+  products.iphone[1], // iPhone Air
+  products.watch[0],  // Apple Watch Ultra 3
+  products.watch[1],  // Apple Watch Series 11
+  products.mac[0],    // MacBook Neo
+  products.mac[1],    // MacBook Pro M5
+];
 
 export const aiResponses: Record<string, {
   content: string;
@@ -140,84 +113,129 @@ export const aiResponses: Record<string, {
   quickReplies?: string[];
 }> = {
   "iphone": {
-    content: "Great choice! The iPhone lineup offers something for everyone. Here are the latest models:",
+    content: "Welcome to the 2026 iPhone lineup! The **iPhone 17 Pro Max** features the revolutionary A19 Pro chip and stunning Copper Titanium finish, while the **iPhone Air** is our thinnest iPhone ever at just 5.8mm.",
     products: products.iphone,
-    quickReplies: ["Compare iPhone 16 Pro vs Pro Max", "What's new in iPhone 16?", "See iPhone accessories"],
+    quickReplies: ["Compare iPhone 17 Pro Max vs Air", "What's new in iPhone 17?", "Show me iPhone accessories"],
   },
   "mac": {
-    content: "Let me show you our Mac lineup. Whether you need portability or power, there's a Mac for you:",
+    content: "Our 2026 Mac lineup is incredible. The **MacBook Neo** starts at just $599 - our most affordable Mac ever - while the **MacBook Pro with M5** delivers unprecedented professional performance.",
     products: products.mac,
-    quickReplies: ["Compare MacBook Pro models", "Best Mac for students", "Mac accessories"],
+    quickReplies: ["Tell me about M5 chip", "MacBook Neo colors", "Compare Mac models"],
   },
   "watch": {
-    content: "Apple Watch is the ultimate device for a healthy life. Here's our current lineup:",
+    content: "The 2026 Apple Watch lineup pushes boundaries. **Apple Watch Ultra 3** offers 72-hour battery life for extreme adventures, while **Series 11** introduces breakthrough blood pressure monitoring.",
     products: products.watch,
-    quickReplies: ["Compare Watch models", "Health features", "Watch bands"],
+    quickReplies: ["Health features in Series 11", "Ultra 3 adventure features", "Compare Watch models"],
   },
   "airpods": {
-    content: "Experience amazing audio with AirPods. Here are your options:",
+    content: "Experience next-generation audio with our 2026 AirPods lineup featuring enhanced spatial audio and improved noise cancellation.",
     products: products.airpods,
     quickReplies: ["Compare AirPods models", "AirPods for fitness", "Audio accessories"],
   },
-  "compare": {
-    content: "I'd be happy to help you compare! The iPhone 16 Pro Max features the largest display at 6.9 inches, the A18 Pro chip, a 48MP camera system with 5x optical zoom, and up to 33 hours of video playback. The iPhone 16 Pro has a 6.3-inch display with the same powerful chip but offers 5x zoom only on Pro Max. Both feature Apple Intelligence, the new Camera Control button, and titanium design.",
-    quickReplies: ["Which has better battery?", "Camera comparison", "See pricing options"],
+  "compare-iphone": {
+    content: "**iPhone 17 Pro Max vs iPhone Air**\n\nThe **iPhone 17 Pro Max** ($1,199) is the ultimate powerhouse with:\n• A19 Pro chip\n• 48MP Fusion camera with 5x optical zoom\n• Titanium design\n• Action button\n\nThe **iPhone Air** ($999) prioritizes portability:\n• Just 5.8mm thin - thinnest iPhone ever\n• A19 chip\n• 48MP camera\n• Impossibly light\n\nChoose Pro Max for maximum capability, or Air for ultimate portability.",
+    products: products.iphone,
+    quickReplies: ["Which has better camera?", "Battery life comparison", "See all colors"],
   },
-  "photography": {
-    content: "For photography enthusiasts, I recommend the iPhone 16 Pro Max. It features:\n\n• 48MP Fusion camera with larger sensor\n• 5x Telephoto with 120mm focal length\n• 48MP Ultra Wide for macro photography\n• Photographic Styles 2.0\n• ProRAW and ProRes video up to 4K 120fps\n• Camera Control button for quick access\n\nThis is our most advanced camera system ever.",
-    products: [products.iphone[0]],
-    quickReplies: ["See sample photos", "Compare to iPhone 16", "Camera accessories"],
+  "macbook-neo": {
+    content: "**MacBook Neo** - The most affordable Mac ever at just **$599**!\n\n• M4 chip for incredible performance\n• 13.6\" Liquid Retina display\n• 18-hour battery life\n• Available in 4 gorgeous colors: Lime, Pink, Blue, Silver\n• MagSafe charging\n\nPerfect for students, first-time Mac users, and anyone who wants the Apple experience at an accessible price.",
+    products: [products.mac[0]],
+    quickReplies: ["See all colors", "Compare to MacBook Pro", "Student discount"],
+  },
+  "macbook-pro": {
+    content: "**MacBook Pro with M5** - Mind-blowing professional performance.\n\n• M5 Pro and M5 Max chip options\n• Up to 128GB unified memory\n• Liquid Retina XDR display\n• 22-hour battery life\n• Pro connectivity with Thunderbolt 5\n\nDesigned for developers, creators, and anyone who demands the absolute best.",
+    products: [products.mac[1]],
+    quickReplies: ["M5 Pro vs M5 Max", "Compare to MacBook Neo", "See configurations"],
+  },
+  "watch-ultra": {
+    content: "**Apple Watch Ultra 3** - Built for the most extreme adventures.\n\n• S10 chip with enhanced performance\n• 72-hour battery life\n• Natural titanium case\n• Precision dual-frequency GPS\n• Depth gauge for diving\n• 100m water resistance\n\nFrom ocean depths to mountain peaks, Ultra 3 is ready for anything.",
+    products: [products.watch[0]],
+    quickReplies: ["Diving features", "Compare to Series 11", "Adventure bands"],
+  },
+  "watch-series": {
+    content: "**Apple Watch Series 11** - Breakthrough health monitoring.\n\n• S10 chip\n• Blood pressure monitoring (NEW)\n• Sleep apnea detection (NEW)\n• Brightest Always-On display ever\n• Fast charging - 80% in 30 minutes\n• Rose Gold finish with stunning display\n\nYour most powerful health companion yet.",
+    products: [products.watch[1]],
+    quickReplies: ["Blood pressure feature", "Compare to Ultra 3", "Health features"],
   },
   "default": {
-    content: "I'd be happy to help you explore Apple products! What would you like to know about? I can help you with:\n\n• iPhone comparisons and features\n• Mac recommendations for your needs\n• Apple Watch health & fitness tracking\n• AirPods and audio products\n• Apple services and support\n\nJust ask me anything!",
-    quickReplies: ["Show me iPhones", "I need a new Mac", "Apple Watch features", "Compare AirPods"],
+    content: "Welcome to Apple 2026! I can help you explore our revolutionary new lineup:\n\n• **iPhone 17 Pro Max** - The ultimate iPhone with A19 Pro\n• **iPhone Air** - Impossibly thin at just 5.8mm\n• **MacBook Neo** - Mac for everyone at $599\n• **MacBook Pro M5** - Unprecedented performance\n• **Apple Watch Ultra 3** - 72-hour adventure battery\n• **Apple Watch Series 11** - Blood pressure monitoring\n\nWhat would you like to explore?",
+    products: featuredProducts2026.slice(0, 4),
+    quickReplies: ["Show me iPhones", "Tell me about MacBook Neo", "Apple Watch features", "What's new in 2026?"],
   },
 };
 
 export const conversations = [
   {
     id: "1",
-    title: "iPhone 16 Pro comparison",
+    title: "iPhone 17 Pro Max features",
     timestamp: "Today, 2:30 PM",
-    preview: "Comparing the latest iPhone models...",
+    preview: "Exploring the A19 Pro chip capabilities...",
   },
   {
     id: "2",
-    title: "MacBook for development",
+    title: "MacBook Neo at $599",
     timestamp: "Yesterday",
-    preview: "Best Mac for software development...",
+    preview: "The most affordable Mac ever...",
   },
   {
     id: "3",
     title: "Apple Watch health features",
     timestamp: "2 days ago",
-    preview: "Learning about fitness tracking...",
+    preview: "Blood pressure monitoring in Series 11...",
   },
 ];
 
 export function getAIResponse(message: string): typeof aiResponses.default {
   const lowerMessage = message.toLowerCase();
   
-  if (lowerMessage.includes("iphone") || lowerMessage.includes("phone")) {
-    if (lowerMessage.includes("compare") || lowerMessage.includes("difference")) {
-      return aiResponses.compare;
-    }
-    if (lowerMessage.includes("photo") || lowerMessage.includes("camera")) {
-      return aiResponses.photography;
+  if (lowerMessage.includes("iphone 17") || lowerMessage.includes("pro max")) {
+    if (lowerMessage.includes("compare") || lowerMessage.includes("vs") || lowerMessage.includes("air")) {
+      return aiResponses["compare-iphone"];
     }
     return aiResponses.iphone;
   }
   
-  if (lowerMessage.includes("mac") || lowerMessage.includes("laptop") || lowerMessage.includes("macbook") || lowerMessage.includes("imac")) {
+  if (lowerMessage.includes("iphone air") || lowerMessage.includes("thin")) {
+    if (lowerMessage.includes("compare") || lowerMessage.includes("vs")) {
+      return aiResponses["compare-iphone"];
+    }
+    return aiResponses.iphone;
+  }
+  
+  if (lowerMessage.includes("iphone") || lowerMessage.includes("phone")) {
+    return aiResponses.iphone;
+  }
+  
+  if (lowerMessage.includes("macbook neo") || lowerMessage.includes("$599") || lowerMessage.includes("affordable mac")) {
+    return aiResponses["macbook-neo"];
+  }
+  
+  if (lowerMessage.includes("macbook pro") || lowerMessage.includes("m5")) {
+    return aiResponses["macbook-pro"];
+  }
+  
+  if (lowerMessage.includes("mac") || lowerMessage.includes("laptop") || lowerMessage.includes("macbook")) {
     return aiResponses.mac;
   }
   
-  if (lowerMessage.includes("watch") || lowerMessage.includes("fitness") || lowerMessage.includes("health")) {
+  if (lowerMessage.includes("ultra") || lowerMessage.includes("adventure")) {
+    return aiResponses["watch-ultra"];
+  }
+  
+  if (lowerMessage.includes("series 11") || lowerMessage.includes("blood pressure") || lowerMessage.includes("health")) {
+    return aiResponses["watch-series"];
+  }
+  
+  if (lowerMessage.includes("watch") || lowerMessage.includes("fitness")) {
     return aiResponses.watch;
   }
   
-  if (lowerMessage.includes("airpod") || lowerMessage.includes("headphone") || lowerMessage.includes("audio") || lowerMessage.includes("earbuds")) {
+  if (lowerMessage.includes("airpod") || lowerMessage.includes("headphone") || lowerMessage.includes("audio")) {
     return aiResponses.airpods;
+  }
+  
+  if (lowerMessage.includes("2026") || lowerMessage.includes("new") || lowerMessage.includes("latest")) {
+    return aiResponses.default;
   }
   
   return aiResponses.default;

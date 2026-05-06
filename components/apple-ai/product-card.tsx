@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export interface Product {
   id: string;
@@ -96,9 +97,11 @@ export function ProductCard({
           </div>
 
           <div className="flex-shrink-0">
-            <img
+            <Image
               src={product.image}
               alt={product.name}
+              width={256}
+              height={256}
               className="w-48 h-48 md:w-64 md:h-64 object-contain"
             />
           </div>
@@ -118,9 +121,11 @@ export function ProductCard({
       >
         <div className="flex items-start gap-4">
           <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-secondary flex items-center justify-center">
-            <img
+            <Image
               src={product.image}
               alt={product.name}
+              width={64}
+              height={64}
               className="w-16 h-16 object-contain"
             />
           </div>
@@ -174,9 +179,11 @@ export function ProductCard({
       onClick={() => onLearnMore?.(product)}
     >
       <div className="aspect-square rounded-xl bg-secondary mb-3 flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src={product.image}
           alt={product.name}
+          width={200}
+          height={200}
           className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
         />
       </div>

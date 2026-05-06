@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Menu, Search, ShoppingBag, User, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { appleLogoUrl } from "@/lib/mock-data";
+import Image from "next/image";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -44,13 +46,13 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
 
             {/* Apple Logo */}
             <a href="#" className="flex items-center">
-              <svg
-                viewBox="0 0 17 20"
-                className="w-4 h-5 fill-foreground"
-                aria-label="Apple"
-              >
-                <path d="M15.5 14.5c-.5 1.2-1.1 2.3-2 3.3-.8.9-1.6 1.4-2.4 1.4-.5 0-1.2-.2-2-.5-.8-.3-1.5-.5-2.1-.5-.6 0-1.3.2-2 .5-.8.3-1.4.5-1.9.5-.9 0-1.8-.5-2.7-1.5C-.5 16.3 0 14.3 0 12c0-1.2.3-2.3.8-3.3.7-1.2 1.6-2 2.7-2.3.5-.2 1.2-.3 2-.3.7 0 1.5.2 2.4.6.9.4 1.4.6 1.7.6.2 0 .8-.2 1.8-.7.9-.4 1.7-.6 2.3-.6 1.7.1 3 1 3.9 2.5-1.6.9-2.3 2.2-2.3 3.8 0 1.2.4 2.3 1.3 3.2.4.4.8.7 1.3.9-.2.4-.3.7-.4 1.1zM11.4.3c0 .9-.3 1.8-1 2.6-.8 1-1.8 1.5-2.9 1.5 0-1 .4-1.9 1-2.6.4-.4.8-.8 1.3-1 .5-.3 1-.4 1.5-.5 0 0 .1 0 .1 0z" />
-              </svg>
+              <Image
+                src={appleLogoUrl}
+                alt="Apple"
+                width={18}
+                height={22}
+                className="w-auto h-auto max-w-[18px] max-h-[22px] object-contain dark:invert"
+              />
             </a>
           </div>
 
