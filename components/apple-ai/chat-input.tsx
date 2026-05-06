@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Mic, MicOff, Paperclip, Sparkles, Camera, ArrowUp } from "lucide-react";
+import { Mic, Plus, ArrowUp, AudioLines } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ChatInputProps {
@@ -14,7 +14,7 @@ interface ChatInputProps {
 export function ChatInput({
   onSendMessage,
   isLoading = false,
-  placeholder = "Message Apple Intelligence...",
+  placeholder = "Ask anything",
 }: ChatInputProps) {
   const [message, setMessage] = useState("");
   const [isListening, setIsListening] = useState(false);
@@ -26,7 +26,7 @@ export function ChatInput({
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${Math.min(
         textareaRef.current.scrollHeight,
-        160
+        120
       )}px`;
     }
   }, [message]);
@@ -51,7 +51,6 @@ export function ChatInput({
 
   const toggleListening = () => {
     setIsListening(!isListening);
-    // Voice recognition would be integrated here with ElevenLabs
   };
 
   return (
@@ -61,34 +60,23 @@ export function ChatInput({
           onSubmit={handleSubmit}
           initial={false}
           className={cn(
-            "relative flex items-end gap-3 p-3 rounded-3xl",
-            "bg-card/80 border border-border/60",
-            "backdrop-blur-xl",
-            "transition-all duration-300",
-            isFocused && "border-accent/40 shadow-xl shadow-accent/5 glow-accent"
+            "relative flex items-end gap-2 p-2 rounded-[28px]",
+            "bg-card border border-border",
+            "shadow-sm",
+            "transition-all duration-200",
+            isFocused && "border-muted-foreground/40 shadow-md"
           )}
         >
-          {/* Left actions */}
-          <div className="flex items-center gap-1.5 pb-0.5">
-            <motion.button
-              type="button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-2.5 rounded-xl hover:bg-secondary/80 transition-colors"
-              aria-label="Attach file"
-            >
-              <Paperclip className="w-5 h-5 text-muted-foreground" />
-            </motion.button>
-            <motion.button
-              type="button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-2.5 rounded-xl hover:bg-secondary/80 transition-colors hidden sm:flex"
-              aria-label="Take photo"
-            >
-              <Camera className="w-5 h-5 text-muted-foreground" />
-            </motion.button>
-          </div>
+          {/* Plus button */}
+          <motion.button
+            type="button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex-shrink-0 p-2.5 rounded-full hover:bg-secondary transition-colors"
+            aria-label="Attach file"
+          >
+            <Plus className="w-5 h-5 text-muted-foreground" />
+          </motion.button>
 
           {/* Input area */}
           <div className="flex-1 relative flex items-center">
@@ -104,16 +92,16 @@ export function ChatInput({
               rows={1}
               className={cn(
                 "w-full resize-none bg-transparent py-2.5 px-1",
-                "text-foreground text-base placeholder:text-muted-foreground/70",
+                "text-foreground text-base placeholder:text-muted-foreground",
                 "focus:outline-none",
                 "disabled:opacity-50 disabled:cursor-not-allowed"
               )}
-              style={{ maxHeight: "160px" }}
+              style={{ maxHeight: "120px" }}
             />
           </div>
 
           {/* Right actions */}
-          <div className="flex items-center gap-1.5 pb-0.5">
+          <div className="flex items-center gap-1.5 flex-shrink-0">
             {/* Voice button */}
             <motion.button
               type="button"
@@ -121,22 +109,22 @@ export function ChatInput({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
-                "relative p-2.5 rounded-xl transition-all",
+                "relative p-2.5 rounded-full transition-all",
                 isListening
-                  ? "bg-accent text-accent-foreground"
-                  : "hover:bg-secondary/80 text-muted-foreground"
+                  ? "bg-foreground text-background"
+                  : "hover:bg-secondary text-muted-foreground"
               )}
               aria-label={isListening ? "Stop listening" : "Start voice input"}
             >
               {isListening && (
                 <motion.div
-                  className="absolute inset-0 rounded-xl bg-accent voice-pulse"
+                  className="absolute inset-0 rounded-full bg-foreground voice-pulse"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
+                  animate={{ opacity: 0.3 }}
                 />
               )}
               {isListening ? (
-                <MicOff className="w-5 h-5 relative z-10" />
+                <AudioLines className="w-5 h-5 relative z-10" />
               ) : (
                 <Mic className="w-5 h-5" />
               )}
@@ -144,49 +132,28 @@ export function ChatInput({
 
             {/* Send button */}
             <AnimatePresence mode="wait">
-              {message.trim() ? (
-                <motion.button
-                  key="send"
-                  type="submit"
-                  disabled={isLoading}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={cn(
-                    "p-2.5 rounded-xl transition-all",
-                    "bg-foreground text-background",
-                    "hover:opacity-90",
-                    "disabled:opacity-50 disabled:cursor-not-allowed"
-                  )}
-                  aria-label="Send message"
-                >
-                  <ArrowUp className="w-5 h-5" />
-                </motion.button>
-              ) : (
-                <motion.button
-                  key="sparkle"
-                  type="button"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2.5 rounded-xl hover:bg-secondary/80 transition-colors"
-                  aria-label="AI suggestions"
-                >
-                  <Sparkles className="w-5 h-5 text-muted-foreground" />
-                </motion.button>
-              )}
+              <motion.button
+                key="send"
+                type="submit"
+                disabled={isLoading || !message.trim()}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={cn(
+                  "p-2.5 rounded-full transition-all",
+                  message.trim()
+                    ? "bg-accent text-accent-foreground hover:opacity-90"
+                    : "bg-secondary text-muted-foreground cursor-not-allowed"
+                )}
+                aria-label="Send message"
+              >
+                <ArrowUp className="w-5 h-5" />
+              </motion.button>
             </AnimatePresence>
           </div>
         </motion.form>
-
-        {/* Hint text */}
-        <p className="text-center text-xs text-muted-foreground/60 mt-4 leading-relaxed">
-          Apple Intelligence can help you explore products, compare features, and find the perfect device.
-        </p>
       </div>
     </div>
   );

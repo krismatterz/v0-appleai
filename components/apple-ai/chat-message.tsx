@@ -44,27 +44,27 @@ export function ChatMessage({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "flex gap-4 py-6",
+        "flex gap-4 py-5",
         isUser && "flex-row-reverse"
       )}
     >
       {/* Avatar */}
       {isUser ? (
-        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-secondary flex items-center justify-center">
-          <User className="w-4 h-4 text-muted-foreground" />
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+          <User className="w-4 h-4 text-accent" />
         </div>
       ) : (
-        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-secondary/80 flex items-center justify-center">
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
           <Image
             src={appleLogoUrl}
             alt="Apple"
-            width={18}
-            height={22}
-            className="w-auto h-auto max-w-[18px] max-h-[22px] object-contain dark:invert"
+            width={16}
+            height={20}
+            className="w-auto h-auto max-w-[16px] max-h-[20px] object-contain"
           />
         </div>
       )}
@@ -72,17 +72,17 @@ export function ChatMessage({
       {/* Content */}
       <div
         className={cn(
-          "flex-1 space-y-4 max-w-2xl",
+          "flex-1 space-y-3 max-w-2xl",
           isUser && "flex flex-col items-end"
         )}
       >
         {/* Message bubble */}
         <div
           className={cn(
-            "rounded-2xl px-5 py-3.5",
+            "rounded-2xl px-4 py-3",
             isUser
-              ? "bg-foreground text-background rounded-tr-md"
-              : "bg-card/60 border border-border/40 rounded-tl-md"
+              ? "bg-foreground text-background"
+              : "bg-transparent"
           )}
         >
           {isUser ? (
@@ -90,10 +90,10 @@ export function ChatMessage({
               {message.content}
             </p>
           ) : (
-            <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-ol:my-2 prose-li:my-0.5 prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-secondary prose-pre:border prose-pre:border-border/40">
+            <div className="prose prose-sm max-w-none prose-p:leading-relaxed prose-p:my-1.5 prose-headings:my-2 prose-ul:my-1.5 prose-ol:my-1.5 prose-li:my-0.5 prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-secondary prose-pre:border prose-pre:border-border text-foreground">
               <Streamdown>{message.content}</Streamdown>
               {message.isStreaming && (
-                <span className="inline-block w-0.5 h-5 bg-current ml-1 typing-cursor align-middle" />
+                <span className="inline-block w-0.5 h-4 bg-foreground ml-0.5 typing-cursor align-middle" />
               )}
             </div>
           )}
@@ -140,14 +140,14 @@ export function ChatMessage({
             {message.quickReplies.map((reply, index) => (
               <motion.button
                 key={index}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
                 onClick={() => onQuickReply?.(reply)}
                 className={cn(
-                  "px-4 py-2 text-sm rounded-full",
-                  "border border-border/60 hover:border-accent/40",
-                  "hover:bg-card/80 transition-all duration-200",
-                  "text-muted-foreground hover:text-foreground"
+                  "px-3 py-1.5 text-sm rounded-full",
+                  "border border-border hover:border-muted-foreground/40",
+                  "hover:bg-secondary transition-all duration-200",
+                  "text-foreground"
                 )}
               >
                 {reply}
@@ -158,48 +158,38 @@ export function ChatMessage({
 
         {/* Assistant actions */}
         {!isUser && !message.isStreaming && (
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5">
             <button
-              className="p-2 rounded-lg hover:bg-secondary/60 transition-colors group"
+              className="p-1.5 rounded-md hover:bg-secondary transition-colors group"
               aria-label="Listen to response"
             >
-              <Volume2 className="w-4 h-4 text-muted-foreground/60 group-hover:text-muted-foreground" />
+              <Volume2 className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-muted-foreground" />
             </button>
             <button
               onClick={handleCopy}
-              className="p-2 rounded-lg hover:bg-secondary/60 transition-colors group"
+              className="p-1.5 rounded-md hover:bg-secondary transition-colors group"
               aria-label="Copy response"
             >
               {copied ? (
-                <Check className="w-4 h-4 text-green-500" />
+                <Check className="w-3.5 h-3.5 text-green-600" />
               ) : (
-                <Copy className="w-4 h-4 text-muted-foreground/60 group-hover:text-muted-foreground" />
+                <Copy className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-muted-foreground" />
               )}
             </button>
-            <div className="w-px h-4 bg-border/40 mx-1" />
+            <div className="w-px h-3 bg-border mx-1" />
             <button
-              className="p-2 rounded-lg hover:bg-secondary/60 transition-colors group"
+              className="p-1.5 rounded-md hover:bg-secondary transition-colors group"
               aria-label="Good response"
             >
-              <ThumbsUp className="w-4 h-4 text-muted-foreground/60 group-hover:text-muted-foreground" />
+              <ThumbsUp className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-muted-foreground" />
             </button>
             <button
-              className="p-2 rounded-lg hover:bg-secondary/60 transition-colors group"
+              className="p-1.5 rounded-md hover:bg-secondary transition-colors group"
               aria-label="Bad response"
             >
-              <ThumbsDown className="w-4 h-4 text-muted-foreground/60 group-hover:text-muted-foreground" />
+              <ThumbsDown className="w-3.5 h-3.5 text-muted-foreground/60 group-hover:text-muted-foreground" />
             </button>
           </div>
-        )}
-
-        {/* Timestamp - only show for last message or user messages */}
-        {(isLast || isUser) && (
-          <p className="text-[11px] text-muted-foreground/50 font-medium">
-            {message.timestamp.toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          </p>
         )}
       </div>
     </motion.div>
