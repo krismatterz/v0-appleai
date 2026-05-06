@@ -1,6 +1,6 @@
 import { Product } from "@/components/apple-ai/product-card";
 
-export const appleLogoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-logo-kHT9PlmSbtfuVqPQAtsximjLs5C2be.png';
+export const appleLogoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/appl-logo-xUPfvSj7uP43duTEOE34B8I2XPAlHc.svg';
 
 export const products: Record<string, Product[]> = {
   iphone: [

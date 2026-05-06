@@ -62,9 +62,9 @@ export function ChatMessage({
           <Image
             src={appleLogoUrl}
             alt="Apple"
-            width={16}
-            height={20}
-            className="w-auto h-auto max-w-[16px] max-h-[20px] object-contain"
+            width={8}
+            height={22}
+            className="h-4 w-auto object-contain"
           />
         </div>
       )}
