@@ -33,14 +33,14 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="relative w-20 h-20 mx-auto mb-3"
+            className="relative w-20 h-20 mx-auto mb-3 flex items-center justify-center"
           >
             <Image
               src={appleLogoUrl}
               alt="Apple"
               width={60}
               height={60}
-              className="w-auto h-auto max-w-full max-h-full object-contain dark:invert"
+              className="w-auto h-auto max-w-[60px] max-h-[60px] object-contain dark:invert"
             />
           </motion.div>
 
