@@ -7,6 +7,8 @@ import { ProductCard, Product } from "./product-card";
 import { useState } from "react";
 import { appleLogoUrl } from "@/lib/mock-data";
 import Image from "next/image";
+import { Streamdown } from "streamdown";
+import "streamdown/styles.css";
 
 export interface Message {
   id: string;
@@ -83,12 +85,18 @@ export function ChatMessage({
               : "bg-card/60 border border-border/40 rounded-tl-md"
           )}
         >
-          <p className="text-[15px] leading-relaxed whitespace-pre-wrap">
-            {message.content}
-            {message.isStreaming && (
-              <span className="inline-block w-0.5 h-5 bg-current ml-1 typing-cursor align-middle" />
-            )}
-          </p>
+          {isUser ? (
+            <p className="text-[15px] leading-relaxed whitespace-pre-wrap">
+              {message.content}
+            </p>
+          ) : (
+            <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:my-2 prose-headings:my-3 prose-ul:my-2 prose-ol:my-2 prose-li:my-0.5 prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-secondary prose-pre:border prose-pre:border-border/40">
+              <Streamdown>{message.content}</Streamdown>
+              {message.isStreaming && (
+                <span className="inline-block w-0.5 h-5 bg-current ml-1 typing-cursor align-middle" />
+              )}
+            </div>
+          )}
         </div>
 
         {/* Products grid */}
