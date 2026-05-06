@@ -45,10 +45,10 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
         </div>
 
         {/* Center - Model selector */}
-        <div className="flex items-center">
-          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-secondary transition-colors">
+        <div className="flex-1 flex items-center justify-center">
+          <button className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-secondary transition-colors whitespace-nowrap">
             <span className="text-sm font-medium text-foreground">Apple Intelligence</span>
-            <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />
+            <ChevronDown className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0" />
           </button>
         </div>
 
