@@ -1,6 +1,6 @@
 import { Product } from "@/components/apple-ai/product-card";
 
-export const appleLogoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-logo-tAZMvbaDtzb0zezgsei1P8QTjR1lDg.png';
+export const appleLogoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apple-logo-kHT9PlmSbtfuVqPQAtsximjLs5C2be.png';
 
 export const products: Record<string, Product[]> = {
   iphone: [
@@ -10,7 +10,7 @@ export const products: Record<string, Product[]> = {
       category: "iPhone",
       tagline: "The ultimate iPhone.",
       price: "From $1,199",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-WPX27CVvryKzmFAblmah5OPjJsoUI3.png",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iphone-WmBQwIlTNP2PmnDjniPCdww1yqnLlz.png",
       colors: ["#E87A4D", "#1C1C1E", "#F5F5F0", "#3B3B3D"],
       isNew: true,
       rating: 4.9,
@@ -21,7 +21,7 @@ export const products: Record<string, Product[]> = {
       category: "iPhone",
       tagline: "Light. Years ahead.",
       price: "From $999",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pLHBxTt7tGtKT7L831Zqc01qrzFly7.png",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/air-Gy42CQxjwjfq7AgMZYuT1F3uoBcSCK.png",
       colors: ["#B8D4E8", "#1C1C1E", "#F5F5F0", "#E8D4C8"],
       isNew: true,
       rating: 4.8,
@@ -34,7 +34,7 @@ export const products: Record<string, Product[]> = {
       category: "Mac",
       tagline: "Hello, everyone.",
       price: "From $599",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neo-8PcF3d738gWUy2Cv2GMphOyxBzqolj.png",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/neo-FdkXRogBW5hKBx8zSX2Tbeh6aSl3kS.png",
       colors: ["#E8E88C", "#F5C6D0", "#4A6B8A", "#86868B"],
       isNew: true,
       rating: 4.8,
@@ -68,7 +68,7 @@ export const products: Record<string, Product[]> = {
       category: "Apple Watch",
       tagline: "Smarter. Brighter. Mightier.",
       price: "From $399",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PM3fLaRqaaurXM0WNZPtenYy0SHXWu.png",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/series-viVyqq7FI4qKxfAJ2DpfjxBEr65ZGN.png",
       isNew: true,
       rating: 4.8,
     },
