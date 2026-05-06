@@ -37,9 +37,9 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
             <Image
               src={appleLogoUrl}
               alt="Apple"
-              width={10}
-              height={28}
-              className="h-5 w-auto object-contain"
+              width={20}
+              height={56}
+              className="h-10 w-auto object-contain"
             />
           </a>
         </div>

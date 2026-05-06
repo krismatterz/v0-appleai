@@ -39,9 +39,9 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
             <Image
               src={appleLogoUrl}
               alt="Apple"
-              width={20}
-              height={55}
-              className="h-10 w-auto object-contain"
+              width={40}
+              height={110}
+              className="h-20 w-auto object-contain"
             />
           </motion.div>
 
