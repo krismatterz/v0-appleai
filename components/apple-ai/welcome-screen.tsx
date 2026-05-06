@@ -69,9 +69,6 @@ export function WelcomeScreen({ onSuggestionClick }: WelcomeScreenProps) {
           transition={{ duration: 0.4, delay: 0.25 }}
           className="w-full mb-5"
         >
-          <p className="text-[10px] font-medium text-muted-foreground text-center mb-3 uppercase tracking-widest">
-            2026 Lineup
-          </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-3">
             {featuredProducts2026.map((product, index) => (
               <motion.button
